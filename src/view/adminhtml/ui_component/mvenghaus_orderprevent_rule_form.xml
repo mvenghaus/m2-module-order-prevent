@@ -53,6 +53,7 @@
             <settings>
                 <label>Company</label>
                 <dataType>text</dataType>
+                <notice translate="true">Leave empty to ignore. Wildcards allowed: *text*</notice>
             </settings>
         </field>
 
@@ -60,6 +61,7 @@
             <settings>
                 <label>Firstname</label>
                 <dataType>text</dataType>
+                <notice translate="true">Leave empty to ignore. Wildcards allowed: *text*</notice>
             </settings>
         </field>
 
@@ -67,6 +69,7 @@
             <settings>
                 <label>Lastname</label>
                 <dataType>text</dataType>
+                <notice translate="true">Leave empty to ignore. Wildcards allowed: *text*</notice>
             </settings>
         </field>
 
@@ -74,6 +77,7 @@
             <settings>
                 <label>Postcode</label>
                 <dataType>text</dataType>
+                <notice translate="true">Leave empty to ignore. Wildcards allowed: *text*</notice>
             </settings>
         </field>
 
@@ -81,6 +85,7 @@
             <settings>
                 <label>City</label>
                 <dataType>text</dataType>
+                <notice translate="true">Leave empty to ignore. Wildcards allowed: *text*</notice>
             </settings>
         </field>
 
@@ -88,6 +93,7 @@
             <settings>
                 <label>E-Mail</label>
                 <dataType>text</dataType>
+                <notice translate="true">Leave empty to ignore. Wildcards allowed: *text*</notice>
             </settings>
         </field>
 

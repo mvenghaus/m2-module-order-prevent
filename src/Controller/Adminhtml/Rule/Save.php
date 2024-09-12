@@ -48,12 +48,12 @@ class Save extends \Magento\Backend\App\Action
             $request = $this->getRequest();
 
             $rule
-                ->setCompany($request->getPost('company') ?: '*')
-                ->setFirstname($request->getPost('firstname') ?: '*')
-                ->setLastname($request->getPost('lastname') ?: '*')
-                ->setPostcode($request->getPost('postcode') ?: '*')
-                ->setCity($request->getPost('city') ?: '*')
-                ->setEmail($request->getPost('email') ?: '*')
+                ->setCompany($request->getPost('company') ?: '')
+                ->setFirstname($request->getPost('firstname') ?: '')
+                ->setLastname($request->getPost('lastname') ?: '')
+                ->setPostcode($request->getPost('postcode') ?: '')
+                ->setCity($request->getPost('city') ?: '')
+                ->setEmail($request->getPost('email') ?: '')
                 ->setErrorMessage($request->getPost('error_message') ?: null);
 
             $rule = $this->ruleRepository->save($rule);

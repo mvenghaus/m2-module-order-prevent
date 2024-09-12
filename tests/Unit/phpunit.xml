@@ -1,0 +1,17 @@
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         colors="true"
+         columns="max"
+         beStrictAboutTestsThatDoNotTestAnything="false"
+         bootstrap="./framework/bootstrap.php">
+    <testsuites>
+        <testsuite name="ProcessEight Unit Tests">
+            <directory>../../../app/code/ProcessEight/*/Test/Unit</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <ini name="memory_limit" value="-1"/>
+        <ini name="date.timezone" value="Europe/London"/>
+        <ini name="xdebug.max_nesting_level" value="200"/>
+    </php>
+</phpunit>
