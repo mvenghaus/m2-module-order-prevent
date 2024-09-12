@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">mvenghaus_orderprevent_rule_form.mvenghaus_orderprevent_rule_data_source</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+
+    <settings>
+        <label>Order Prevent</label>
+        <namespace>orderprevent_rule_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>mvenghaus_orderprevent_rule_form.mvenghaus_orderprevent_rule_data_source</dep>
+        </deps>
+
+        <buttons>
+            <button name="back">
+                <label translate="true">Back</label>
+                <url path="*/*/index"></url>
+            </button>
+            <button name="save">
+                <class>primary</class>
+                <label translate="true">Save</label>
+            </button>
+        </buttons>
+    </settings>
+
+    <dataSource name="mvenghaus_orderprevent_rule_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+        <dataProvider class="Mvenghaus\OrderPrevent\Ui\Component\Form\DataProvider\Rule" name="mvenghaus_orderprevent_rule_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+    <fieldset name="general" sortOrder="10">
+        <settings>
+            <label>General</label>
+        </settings>
+
+        <field name="company" formElement="input">
+            <settings>
+                <label>Company</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+
+        <field name="firstname" formElement="input">
+            <settings>
+                <label>Firstname</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+
+        <field name="lastname" formElement="input">
+            <settings>
+                <label>Lastname</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+
+        <field name="postcode" formElement="input">
+            <settings>
+                <label>Postcode</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+
+        <field name="city" formElement="input">
+            <settings>
+                <label>City</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+
+        <field name="email" formElement="input">
+            <settings>
+                <label>E-Mail</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+
+        <field name="error_message" formElement="textarea">
+            <settings>
+                <label>Error Message</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+
+    </fieldset>
+</form>

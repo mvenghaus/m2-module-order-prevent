@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">mvenghaus_orderprevent_rule_listing.mvenghaus_orderprevent_rule_data_source</item>
+        </item>
+    </argument>
+
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/add"/>
+                <class>primary</class>
+                <label translate="true">Add</label>
+            </button>
+        </buttons>
+        <spinner>mvenghaus_orderprevent_rule_columns</spinner>
+        <deps>
+            <dep>mvenghaus_orderprevent_rule_listing.mvenghaus_orderprevent_rule_data_source</dep>
+        </deps>
+    </settings>
+
+    <dataSource name="mvenghaus_orderprevent_rule_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Mvenghaus_OrderPrevent::default</aclResource>
+        <dataProvider class="Mvenghaus\OrderPrevent\Ui\Component\Listing\DataProvider\Rule" name="mvenghaus_orderprevent_rule_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+    <listingToolbar name="listing_top">
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+
+    <columns name="mvenghaus_orderprevent_rule_columns">
+        <column name="id">
+            <settings>
+                <label>ID</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+
+        <column name="company">
+            <settings>
+                <label>Company</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+
+        <column name="firstname">
+            <settings>
+                <label>Firstname</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+
+        <column name="lastname">
+            <settings>
+                <label>Lastname</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+
+        <column name="postcode">
+            <settings>
+                <label>Postcode</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+
+        <column name="city">
+            <settings>
+                <label>City</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+
+        <column name="email">
+            <settings>
+                <label>E-Mail</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+
+        <column name="error_message">
+            <settings>
+                <label>Error Message</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+
+        <actionsColumn name="actions" class="Mvenghaus\OrderPrevent\Ui\Component\Listing\Column\Rule\Actions"/>
+    </columns>
+</listing>
