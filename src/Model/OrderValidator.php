@@ -71,8 +71,8 @@ class OrderValidator
 
         if (!empty($ruleValue) &&
             (
-                fnmatch($ruleValue, $order->getBillingAddress()->getData($field), FNM_CASEFOLD) ||
-                fnmatch($ruleValue, $order->getShippingAddress()->getData($field), FNM_CASEFOLD)
+                fnmatch($ruleValue, (string)$order->getBillingAddress()->getData($field), FNM_CASEFOLD) ||
+                fnmatch($ruleValue, (string)$order->getShippingAddress()->getData($field), FNM_CASEFOLD)
             )
         ) {
             return false;
