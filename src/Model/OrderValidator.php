@@ -36,10 +36,10 @@ class OrderValidator
                 continue;
             }
 
-            $isValid = false;
+            $isValid = true;
             foreach ($fields as $field) {
-                if ($this->validateField($field, $order, $rule)) {
-                    $isValid = true;
+                if (!$this->validateField($field, $order, $rule)) {
+                    $isValid = false;
                     break;
                 }
             }
@@ -68,11 +68,12 @@ class OrderValidator
     public function validateField($field, Order $order, RuleInterface $rule): bool
     {
         $ruleValue = $rule->getData($field);
+        $billingAddressValue = (string)$order->getBillingAddress()->getData($field);
+        $shippingAddressValue = (string)$order->getShippingAddress()->getData($field);
 
-        if (!empty($ruleValue) &&
-            (
-                fnmatch($ruleValue, (string)$order->getBillingAddress()->getData($field), FNM_CASEFOLD) ||
-                fnmatch($ruleValue, (string)$order->getShippingAddress()->getData($field), FNM_CASEFOLD)
+        if (!empty($ruleValue) && (
+                fnmatch($ruleValue, $billingAddressValue, FNM_CASEFOLD) ||
+                fnmatch($ruleValue, $shippingAddressValue, FNM_CASEFOLD)
             )
         ) {
             return false;
